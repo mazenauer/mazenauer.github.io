@@ -45,10 +45,10 @@ ul.posts li {
     list-style: none;
 }
 
-nav ul dl {
+dl {
     font-weight: normal;
 }
 
-nav ul dl dd {
+dl dd {
     font-style: italic;
 }
