@@ -60,3 +60,10 @@ dl {
 dd {
     font-style: italic;
 }
+
+.project {
+    font-weight: normal;
+    /*font-family: 'Serif';*/
+    padding: 1cm;
+    text-align: justify;
+}
