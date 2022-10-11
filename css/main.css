@@ -64,7 +64,7 @@ dd {
 .project {
     font-weight: normal;
     /*font-family: 'Serif';*/
-    padding: 1cm;
+    padding: 0.2cm 0cm 0.1cm;
     text-align: justify;
     line-heigh:150%;
     /*font-size: 0.8em;*/
