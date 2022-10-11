@@ -5,9 +5,9 @@ title: My projects
 <h1>{{ page.title }}</h1>
 
 <style>
-  li {
-    font-weight: normal; 
-    font-family: 'Serif';
+  .project {
+    font-weight: normal;
+    /*font-family: 'Serif';*/
     padding: 1cm;
   }
 </style>
@@ -16,12 +16,38 @@ title: My projects
   <nav>
     <ul>   
       
-      <li> <h2>Semester project</h2>
+      <li class=project> <h2>Semester project</h2>
           <h4><a href="https://github.com/mazenauer/Kepler-PINN">Physics-informed neural networks for Kepler problems</a></h4>
-          Description on semester project
+          To kick off my semester thesis I read a lot of papers about symplectic ODE solvers and physics-informed neural networks (PINNs). 
+          Dynamical systems, or ODEs, are best solved with symplectic integrators that preserve a physical structure in the solution. For example, 
+          while many integration schemes such as Euler's method or the Runge-Kutta methods do not preserve energy, symplectic methods do. 
+          My choice ended up with Ruth's method, it is symplectic, fast, and most importantly: easy to implement and fast in execution.
+          Recently, there was development to solve PDEs using machine learning techniques called PINNs. My task was to find out, how feasible it is to solve
+          dynamical systems with the same techniques. As a toy problem to benchmark the PINN I was given the Kepler problem with two bodies, that can
+          be reduced to a single body moving in a central potential. For those unaware, the Kepler problem is the solution of moving bodies
+          influenced only by gravity (electrostatic forces give the same mathematical problem). As such, the system essentially has four degrees of freedom.
+          I implemented a PINN for this system in Python using the PyTorch framework, which I needed to get accustomed to first. Piece by piece 
+          I built the model, implementing a suitable loss function and a number of helper methods to visualize training progress. 
+          While the case of circular orbits worked without problems, the elliptical orbits just didn't want to give the correct result. After days of 
+          that headache and coming up with all different sorts of ways to make the model more robust for training I found a sign error in the loss function.
+          Once the model was up and running and thoroughly tested I still had about ten hyperparameters that were arbitrarily set by me.
+          I was tasked with performing a sensitivity analysis to assess the sensitivity of the final PINN solution on the hyperparameters.
+          It took almost a week on 64 parallel processes on the cluster of my university to generate the large number of samples needed to 
+          perform the Sobol' sensitivity analysis. The result was that the solution was not sensitive to any hyperparameters in particular, rather the
+          combination of all of them. Unfortunately, this made it difficult to efficiently optimize the hyperparameters. 
+          In conclusion, PINNs are very well able to solve dynamical systems while also satisfying symplecticity and other constraints. The big difference
+          to conventional solvers is that the PINN does not need to solve the ODE going timestep by timestep, which can be very slow for long integration
+          times, but rather proposes a solution for all times at once and having to incrementally improve the solution in training epochs. 
+          If a conventional needs a step size of 1e-6 and a total integration time of 1e9 it needs 1e15 steps, whereas the neural network might converge
+          in about 1e4 or 1e5 training epochs. Each training step of the PINN is parallelizable, reducing the cost of a training step.
+          
+          During this semester project I was forced to adapt often and quickly. I learned to use the PyTorch framework, accessing the HPC cluster via ssh and 
+          sending batch jobs, using git and GitHub to save my work along the way and make it public and reproducible. Last but not least, 
+          with our weekly group meetings I learned a lot about communicating my work, helping each other out when someone faces a difficult obstacle,
+          and writing scientific reports and maintaining an associated repository.
       </li>
       
-      <li> <h2>Master's thesis</h2>
+      <li class=project> <h2>Master's thesis</h2>
           <h4>Data aggregation methods for aerosol optical depth (ongoing)</h4>
           Description on master's thesis
       </li>
