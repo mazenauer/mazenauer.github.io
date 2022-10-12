@@ -60,6 +60,7 @@ dl {
 
 dd {
     font-style: italic;
+    padding: 0.5em;
 }
 
 .project {
@@ -67,6 +68,6 @@ dd {
     /*font-family: 'Serif';*/
     padding: 0.2cm 0cm 0.1cm;
     text-align: justify;
-    line-heigh:150%;
+    line-height:150%;
     /*font-size: 0.8em;*/
 }
