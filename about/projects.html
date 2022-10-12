@@ -8,9 +8,21 @@ title: My projects
   <nav>
     <ul>   
       
+      <li> <h2>Master's thesis</h2>
+        <h4>Data aggregation methods for aerosol optical depth (ongoing)</h4>
+        <p class=project style="font-size:1em">
+          This project is still ongoing. My work revolves around aerosol optical depth (AOD) measurements, which indicates how much radiation is
+          absorbed per distance in the atmosphere. Understanding the role of aerosols in radiative transfer is important to understanding their role in 
+          climate change, for example. Airborne aerosols are also a health hazard, so measuring them 
+          There are two main ways to get data: ground-based in-situ measurements and satellite measurements.
+          Both come with their advantages and weaknesses, for example ground-based measurements only cover a small fraction of the earths surface but are 
+          very accurate while satellite-based measurements cover the whole globe but are usually less reliable. 
+         </p>
+      </li>
+      
       <li> <h2>Semester project</h2>
-          <h4><a href="https://github.com/mazenauer/Kepler-PINN">Physics-informed neural networks for Kepler problems</a></h4>
-          <p class=project style="font-size:1em">
+        <h4><a href="https://github.com/mazenauer/Kepler-PINN">Physics-informed neural networks for Kepler problems on GitHub</a></h4>
+        <p class=project style="font-size:1em">
           To kick off my semester thesis I read a lot of papers about symplectic ODE solvers and physics-informed neural networks (PINNs). 
           Dynamical systems, or ODEs, are best solved with symplectic integrators that preserve a physical structure in the solution. For example, 
           while many integration schemes such as Euler's method or the Runge-Kutta methods do not preserve energy, symplectic methods do. 
@@ -19,7 +31,9 @@ title: My projects
           dynamical systems with the same techniques. As a toy problem to benchmark the PINN I was given the Kepler problem with two bodies, that can
           be reduced to a single body moving in a central potential. For those unaware, the Kepler problem is the solution of moving bodies
           influenced only by gravity (electrostatic forces give the same mathematical problem). As such, the system essentially has four degrees of freedom.
-          I implemented a PINN for this system in Python using the PyTorch framework, which I needed to get accustomed to first. Piece by piece 
+        </p>
+        <p class=project style="font-size:1em">
+           I implemented a PINN for this system in Python using the PyTorch framework, which I needed to get accustomed to first. Piece by piece 
           I built the model, implementing a suitable loss function and a number of helper methods to visualize training progress. 
           While the case of circular orbits worked without problems, the elliptical orbits just didn't want to give the correct result. After days of 
           that headache and coming up with all different sorts of ways to make the model more robust for training I found a sign error in the loss function.
@@ -33,20 +47,15 @@ title: My projects
           times, but rather proposes a solution for all times at once and having to incrementally improve the solution in training epochs. 
           If a conventional needs a step size of 1e-6 and a total integration time of 1e9 it needs 1e15 steps, whereas the neural network might converge
           in about 1e4 or 1e5 training epochs. Each training step of the PINN is parallelizable, reducing the cost of a training step.
-          
+        </p>
+        <p class=project style="font-size:1em">
           During this semester project I was forced to adapt often and quickly. I learned to use the PyTorch framework, accessing the HPC cluster via ssh and 
           sending batch jobs, using git and GitHub to save my work along the way and make it public and reproducible. Last but not least, 
-          with our weekly group meetings I learned a lot about communicating my work, helping each other out when someone faces a difficult obstacle,
-          and writing scientific reports and maintaining an associated repository.
-          </p>
+          with our weekly group meetings I learned a lot about communicating my work to peers, experts, and laypersons, and also helping each other out when 
+          someone faces a difficult obstacle along the way. I also gained experience in writing scientific reports and maintaining an associated repository.
+         </p>
       </li>
       
-      <li> <h2>Master's thesis</h2>
-          <h4>Data aggregation methods for aerosol optical depth (ongoing)</h4>
-          <p class=project style="font-size:1em">
-            Description on master's thesis
-          </p>
-      </li>
     </ul>
   </nav>
 
