@@ -13,18 +13,25 @@ title: My projects
         <p class=project style="font-size:1em">
           This project is still ongoing. My work revolves around aerosol optical depth (AOD) measurements, which indicates how much radiation is
           absorbed per distance in the atmosphere. Understanding the role of aerosols in radiative transfer is important to understanding their role in 
-          climate change, for example. Airborne aerosols are also a health hazard, so measuring them 
+          climate change, for example. Airborne aerosols are also a health hazard, so knowing their distribution is a of interest to public health.
           There are two main ways to get data: ground-based in-situ measurements and satellite measurements.
           Both come with their advantages and weaknesses, for example ground-based measurements only cover a small fraction of the earths surface but are 
           very accurate while satellite-based measurements cover the whole globe but are usually less reliable. 
-         </p>
+        </p>
+        <p class=project style="font-size:1em"> 
+          So far the most widely used method to compress the Gigabytes of AOD data measured daily around the globe is to average over the measurements.
+          But the AOD distribution is not Gaussian, so the mean and variance don't usually provide the best information or can be misleading in terms of 
+          confidence intervals. The most part of my work is of statistical nature, like model selection and time-series analysis. A big part of dealing 
+          with such big data sets is scripting to automate tasks. I also work with a libRadtran, a library for radiative transfer modelling, to assess 
+          the impact of AOD on the solar irradiance through the atmosphere and how different aggregation methods change the irradiance.
+        </p>
       </li>
       
       <li> <h2>Semester project</h2>
         <h4><a href="https://github.com/mazenauer/Kepler-PINN">Physics-informed neural networks for Kepler problems on GitHub</a></h4>
         <p class=project style="font-size:1em">
           To kick off my semester thesis I read a lot of papers about symplectic ODE solvers and physics-informed neural networks (PINNs). 
-          Dynamical systems, or ODEs, are best solved with symplectic integrators that preserve a physical structure in the solution. For example, 
+          Dynamical systems, or ODEs, are best solved with symplectic integrators that preserve a special structure in the solution. For example, 
           while many integration schemes such as Euler's method or the Runge-Kutta methods do not preserve energy, symplectic methods do. 
           My choice ended up with Ruth's method, it is symplectic, fast, and most importantly: easy to implement and fast in execution.
           Recently, there was development to solve PDEs using machine learning techniques called PINNs. My task was to find out, how feasible it is to solve
